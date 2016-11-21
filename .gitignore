@@ -1,3 +1,4 @@
-vendor/*
-web/assets/*
-web/media/*
+/vendor/*
+/web/assets/*
+/web/media/*
+/newsportal.mindnode
