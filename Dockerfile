@@ -23,8 +23,8 @@ RUN sed -i -e 's/\/var\/www\/html/\/var\/www\/html\/web/g' /etc/apache2/sites-av
 # ENV ALLOW_OVERRIDE **False**
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
-ENV APACHE_LOCK_DIR=/var/lock/apache2 \
-ENV APACHE_RUN_DIR=/var/run/apache2 \
+ENV APACHE_LOCK_DIR=/var/lock/apache2
+ENV APACHE_RUN_DIR=/var/run/apache2
 ENV APACHE_PID_FILE=/var/run/apache2.pid
 RUN usermod -u 1000 www-data
 EXPOSE 80
