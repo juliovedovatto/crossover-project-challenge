@@ -1,12 +1,12 @@
 {
   "name" : "newsportal",
-  "description" : "Yii 2 Basic Project Template",
+  "description" : "Project challenge for job vacancy at crossover.com",
   "version" : "1.0.0",
   "require" : {
-    "php" : ">=5.4.0",
-    "yiisoft/yii2" : "~2.0.5",
-    "yiisoft/yii2-bootstrap" : "~2.0.0",
-    "yiisoft/yii2-swiftmailer" : "~2.0.0",
+    "php" : ">=5.5.0",
+	"yiisoft/yii2": "~2.0.10",
+    "yiisoft/yii2-bootstrap": "~2.0.0",
+    "yiisoft/yii2-swiftmailer": "~2.0.0",
     "zyx/zyx-phpmailer": "@stable",
     "2amigos/yii2-tinymce-widget": "~1.1",
     "kartik-v/yii2-mpdf": "*",
@@ -16,7 +16,7 @@
     "yiisoft/yii2-debug" : "~2.0.0",
     "yiisoft/yii2-gii" : "^2.0",
     "yiisoft/yii2-faker" : "~2.0.0",
-    "codeception/base" : "^2.2.3",
+    "codeception/codeception" : "^2.2.3",
     "codeception/verify" : "~0.3.1",
     "codeception/specify" : "~0.4.3"
   },
@@ -30,7 +30,7 @@
     "irc" : "irc://irc.freenode.net/yii",
     "source" : "https://github.com/yiisoft/yii2"
   },
-  "keywords" : [ "yii2", "framework", "basic", "project template" ],
+  "keywords" : [""],
   "minimum-stability" : "stable",
   "extra" : {
     "yii\\composer\\Installer::postCreateProject" : {
@@ -51,5 +51,5 @@
   },
   "license" : "BSD-3-Clause",
   "type" : "project",
-  "homepage" : "http://www.yiiframework.com/"
+  "homepage" : "http://localhost/"
 }
