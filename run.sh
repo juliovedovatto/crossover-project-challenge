@@ -6,7 +6,7 @@ if [ ! -d "$APACHE_RUN_DIR" ]; then
 	chown $APACHE_RUN_USER:$APACHE_RUN_GROUP "$APACHE_RUN_DIR"
 fi
 if [ -f "$APACHE_PID_FILE" ]; then
-	rm "$APACHE_PID_FILE"
+	rm -f "$APACHE_PID_FILE"
 fi
 
 if [ "$ALLOW_OVERRIDE" = "**False**" ]; then
