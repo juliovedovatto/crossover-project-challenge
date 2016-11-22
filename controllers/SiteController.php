@@ -28,7 +28,7 @@ class SiteController extends \app\components\Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'register', 'articles', 'index'],
+                        'actions' => ['login', 'register', 'articles', 'index', 'article', 'article-download'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
