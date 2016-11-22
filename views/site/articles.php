@@ -3,6 +3,7 @@
 /* @var $this \app\components\View */
 /* @var $article \app\models\Article */
 
+use app\components\View;
 use \app\components\Helper;
 
 

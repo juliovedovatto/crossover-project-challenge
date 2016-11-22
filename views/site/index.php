@@ -1,5 +1,6 @@
 <?php
 
+use app\components\View;
 use yii\helpers\Url;
 use app\components\Helper;
 

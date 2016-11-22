@@ -6,6 +6,7 @@
 $this->addTitle($article->title);
 $this->addTitle('Article');
 
+use app\components\View;
 use \app\components\Helper;
 use yii\helpers\Url;
 use yii\helpers\Html;
