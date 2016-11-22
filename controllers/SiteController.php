@@ -306,7 +306,7 @@ class SiteController extends \app\components\Controller
     	if (!$article = Article::findOne(array('id' => $id)))
     		throw new HttpException(404, 'Article not found');
 		elseif ($article->status != $article::STATUS_ENABLED && (!$this->isLoggedUserAdmin()))
-    		throw new HttpException(404);
+    		throw new HttpException(404, 'Article not approved by moderation yet.');
 		
     		$pdf = new Pdf([
 				'mode' => Pdf::MODE_CORE,

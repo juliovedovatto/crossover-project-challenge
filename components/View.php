@@ -19,7 +19,7 @@ class View extends \yii\web\View {
 	
 	
 	public function getTitle() {
-		return implode(' - ', $this->title);
+		return is_array($this->title) ? implode(' - ', $this->title) : $this->title;
 	}
 	
 	public function setTitle($title) {

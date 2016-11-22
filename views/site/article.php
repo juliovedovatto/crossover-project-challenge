@@ -3,8 +3,8 @@
 /* @var $this \app\components\View */
 /* @var $article \app\models\Article */
 
-$this->addTitle($article->title);
 $this->addTitle('Article');
+$this->addTitle($article->title);
 
 use app\components\View;
 use \app\components\Helper;
@@ -73,7 +73,9 @@ use yii\helpers\Html;
     	</div>
     	<?php endif; ?>
     	<div class="text-center" style="maring-top: 20px;">
+    	<?php if ($article->status == $article::STATUS_ENABLED) : ?>
 			<a href="/article/download/<?php echo $article->id; ?>" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-download"></span> Download PDF of Article</a>
+		<?php endif; ?>
     		<a href="/articles" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-book"></span> Read more Articles</a>
     	</div>
     </div>
