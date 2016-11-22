@@ -5,7 +5,8 @@
 return [
     'id' => 'basic-tests',
 	'bootstrap' => ['log'],
-    'basePath' => dirname(__DIR__),    
+	'aliases' => require(__DIR__ . '/aliases.php'),
+    'basePath' => dirname(__DIR__),  
     'language' => 'en-US',
     'components' => [
         'db' => require(__DIR__ . '/db.php'),
