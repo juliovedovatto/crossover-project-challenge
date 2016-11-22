@@ -2,3 +2,5 @@
 /web/assets/*
 /web/media/*
 /newsportal.mindnode
+org.eclipse.*
+/.settings
