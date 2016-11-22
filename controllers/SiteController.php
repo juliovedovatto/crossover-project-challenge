@@ -263,13 +263,14 @@ class SiteController extends \app\components\Controller
     }
     
     public function actionArticleAdmin($action, $id) {
-    	if (!$this->isLoggedUserAdmin())
-    		throw new HttpException(403, 'Invalid Action');
-    	elseif (!$article = Article::findOne(array('id' => $id)))
+    	if (!$article = Article::findOne(array('id' => $id)))
     		throw new HttpException(404, 'Article not found');
     	
     	switch ($action) {
     		case 'approve':
+    			if (!$this->isLoggedUserAdmin())
+    				throw new HttpException(403, 'Invalid Action');
+    				
     			$article->status = $article::STATUS_ENABLED;
     			$article->published_at = new \yii\db\Expression('NOW()');
     			
@@ -279,7 +280,9 @@ class SiteController extends \app\components\Controller
 				$this->addSuccessMessage('Article successfully approved.');
     			return $this->redirect('/article/' . $article->id);
     		case 'disable':
-    			
+    			if (!$this->isLoggedUserAdmin())
+    				throw new HttpException(403, 'Invalid Action');
+    				
     			$article->status = $article::STATUS_DISABLED;
     			$article->published_at = null;
     			if (!$article->save(false))
@@ -288,7 +291,9 @@ class SiteController extends \app\components\Controller
 				$this->addSuccessMessage('Article successfully disabled.');
 				return $this->redirect('/article/' . $article->id);
     		case 'delete':
-    			if (!$article->delete())
+    			if (!$this->isLoggedUserAdmin() && $article->id_user != $this->getUser()->id)
+    				throw new HttpException(403, 'Invalid Action');
+    			elseif (!$article->delete())
     				throw new \Exception('Error publishing article');
     				
     			$picture = Yii::getAlias('@app') . '/web/' . $article->picture;
